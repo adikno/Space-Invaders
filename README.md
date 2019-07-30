@@ -1,3 +1,4 @@
+# Space-Invaders
 An implementation for the classic Space Invaders game.
 
 The game was implemented based on my Arkanoid's infrastructure, since both have a lot in common. 
@@ -5,26 +6,17 @@ With the addition of some significant features and with the change of some small
 
 You can compile the program and generates a portable jar using the included makefile.
 
-
------------------more details about the implementation are mentioned below-------------
-
-
+### Description of the implementation
 A brief description of how I implemented the game:
-	1. the Aliens formation -
-		I added a speed-member to the Block class, which I initialized at the beginning of the game, and
-		increased it every time the aliens change direction and at the end of each level.
-		In addition, I implemented the 'timePassed' function in Block's class, by moving the block
-		speed*dt units to the current direction.
-		Meanwhile, I implemented a sprite called 'BlockFormation' that hold a list of lists of block.
-		(Each list represent a different column of aliens.)
-		Using 'timePassed' function, I checked when an external column of aliens reach to a wall and
-		when it happens I:
-			a. increase the aliens's speed.
-			b. change their direction.
-			c. push them down a bit.
-		When the user loses a life, the 'gameLevel' class invoke 'resetPlace' method of 'blockFormation'.
-		This method in charge of reset all the aliens to their original position using a member called
-		'initialPosition' in class block.
+1. the Aliens formation -
+	- I added a speed-member to the Block class, which I initialized at the beginning of the game, and increased it every time the aliens change direction and at the end of each level.
+	- In addition, I implemented the 'timePassed' function in Block's class, by moving the block speed*dt units to the current direction.
+	- Meanwhile, I implemented a sprite called 'BlockFormation' that hold a list of lists of block. (Each list represent a different column of aliens.)
+	- Using 'timePassed' function, I checked when an external column of aliens reach to a wall and when it happens I:
+		- increase the aliens's speed.
+		- change their direction.
+		- push them down a bit.
+	- When the user loses a life, the 'gameLevel' class invoke 'resetPlace' method of 'blockFormation'. This method in charge of reset all the aliens to their original position using a member called 'initialPosition' in class block.
 	2. the shields -
 		I implemented a method in 'GameLevel' class called 'buildShields', inside this method I built
 		three shields, each of them constructed by 90 tiny blocks (3 rows of 30 block each).
@@ -43,7 +35,7 @@ A brief description of how I implemented the game:
 	   Inside this method a white ball is created from the paddle's position with an angle of 0 degrees.
 New Classes:
 	1. BlockFormation - In charge of coordinate the aliens group's movement.
-	2. Level - A class that implements 'levelInformation' interface from the last assignment –
+	2. Level - A class that implements 'levelInformation' interface from the last assignment â€“
 	   In charge of creates all the blocks (the aliens) and other information of the level.
 
 Other classes (from ass7):
@@ -68,14 +60,14 @@ Game package:
 	2. GameLevel - initializes the game.
 	3. RunGameTask - run the game until it ends.
 Geometry package:
-	1. Circle – represents a circle.
-	2. Line – represents a line.
+	1. Circle â€“ represents a circle.
+	2. Line â€“ represents a line.
 	3. Point - represents a point.
-	4. Rectangle – represents a rectangle.
+	4. Rectangle â€“ represents a rectangle.
 Instruments package:
 	1. BackGround - holds a list of sprites that composed the background of the game.
 	2. Ball - the bullets in the game. (a red one can't kill aliens)
-	3. Block – in charge of representing the frame, the aliens and the shields.
+	3. Block â€“ in charge of representing the frame, the aliens and the shields.
 	4. Paddle - the paddle.
 	5. Selection - selection for the menu.
 	6. Velocity - the velocity of a ball.
@@ -83,7 +75,7 @@ Tools package:
 	1. BallRemover - in charge of removing balls after they hit something / the level stopped.
 	2. BlockRemover - in charge of removing blocks after they have being hit.
 	3. CollisionInfo - a collision information.
-	4. Counter – in charge of tracking after score, lives etc.
+	4. Counter â€“ in charge of tracking after score, lives etc.
 	5. ScoreTrackingListener - in charge of updating the score during the game.
 Ass7Game - The main class, in charge of build the menu and run it.
 
